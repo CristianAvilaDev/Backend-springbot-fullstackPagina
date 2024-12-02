@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-crudrapido
+    environment:
+      MYSQL_ROOT_PASSWORD: amoress123
+      MYSQL_DATABASE: crudrapido
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crudrapido-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/crudrapido
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: amoress123
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

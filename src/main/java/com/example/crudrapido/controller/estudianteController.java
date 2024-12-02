@@ -12,6 +12,11 @@ import java.util.List;
 public class estudianteController {
 
 
+    @GetMapping("/")
+    public String hello() {
+        return "Hola";  // Responde con el mensaje "Hola"
+    }
+
 
     @Autowired
     studentService studentService;

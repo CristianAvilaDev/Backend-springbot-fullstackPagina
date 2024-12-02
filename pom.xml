@@ -58,10 +58,27 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+
+
+
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
+
 				<configuration>
+					<mainClass>
+
+						com.example.crudrapido.CrudrapidoApplication
+					</mainClass>
+
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -70,6 +87,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+
+
+
+
 		</plugins>
 	</build>
 

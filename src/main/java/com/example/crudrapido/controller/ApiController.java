@@ -21,6 +21,16 @@ public class ApiController {
         return List.of("Dato1", "Dato2", "Dato3");
     }
 
+
+    // Endpoint para "/api/datos"
+    @GetMapping("/api/todosLosUsuarios")
+    public List<estudiante> obtenerDatossTOdosLosUsers() {
+        return studentService.getEstudianteTodos(); // Retorna todos los estudiantes
+    }
+
+
+
+
     // Endpoint para "/pagina1"
     @GetMapping("/pagina1")
     public String mostrarMensaje() {

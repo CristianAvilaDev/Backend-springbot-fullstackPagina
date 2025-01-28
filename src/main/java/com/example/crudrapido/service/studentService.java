@@ -20,8 +20,8 @@ public class studentService {
     }
 
     // Método para guardar un estudiante (insertar o actualizar)
-    public void saveEstudiante(estudiante estudiante) {
-         EstudianteRepositorio.save(estudiante); // Guarda o actualiza un estudiante
+    public void saveEstudiante(estudiante nuevoEstudiante) {
+         EstudianteRepositorio.save(nuevoEstudiante); // Guarda o actualiza un estudiante
     }
     public List<estudiante> getEstudianteTodos() {
         return  EstudianteRepositorio.findAll(); // Devuelve todos los estudiantes

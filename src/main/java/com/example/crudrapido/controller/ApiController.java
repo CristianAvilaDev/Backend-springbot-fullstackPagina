@@ -41,6 +41,7 @@ public class ApiController {
     @PostMapping(value = "/api/recibirDato", consumes = MediaType.TEXT_PLAIN_VALUE)
     public String recibirDato(@RequestBody String dato) {
         System.out.println("test cambios, borrar esto");
+        System.out.println("test cambios, borrar esto");
         System.out.println("Dato recibido en el backend: " + dato);
         return "Dato recibido: " + dato;
     }

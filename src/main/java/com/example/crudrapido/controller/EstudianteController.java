@@ -5,8 +5,8 @@ package com.example.crudrapido.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.crudrapido.entiti.estudiante;
-import com.example.crudrapido.service.studentService;
+import com.example.crudrapido.entidades.EstudianteEntidad;
+import com.example.crudrapido.service.StudentService;
 
 
 
@@ -14,14 +14,14 @@ import com.example.crudrapido.service.studentService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = estudianteController.BASE_PATH) // Usamos la constante BASE_PATH
-public class estudianteController {
+@RequestMapping(path = EstudianteController.BASE_PATH) // Usamos la constante BASE_PATH
+public class EstudianteController {
 
     // Definir la ruta base como una constante
     public static final String BASE_PATH = "/api/estudiantes";  // Aquí se puede modificar si es necesario
 
     @Autowired
-    studentService studentService;
+    StudentService studentService;
 
     @GetMapping("/inicio")
     public String bienvenido(HttpServletRequest request) {
@@ -65,20 +65,20 @@ public class estudianteController {
 
     // POST: guardar un estudiante
     @PostMapping("/guardarEstudiante")
-    public estudiante save(@RequestBody estudiante nuevoEstudiante) {
+    public EstudianteEntidad save(@RequestBody EstudianteEntidad nuevoEstudiante) {
         studentService.saveEstudiante(nuevoEstudiante); // Guarda el estudiante
         return nuevoEstudiante;
     }
 
     // GET: obtener todos los estudiantes
     @GetMapping("/obtenerEstudiantes")
-    public List<estudiante> getEstudiantes() {
+    public List<EstudianteEntidad> getEstudiantes() {
         return studentService.getEstudianteTodos(); // Retorna todos los estudiantes
     }
 
     // GET: obtener un estudiante por su ID
     @GetMapping("/obtenerEstudiante/{id}")
-    public estudiante getEstudianteById(@PathVariable Long id) {
+    public EstudianteEntidad getEstudianteById(@PathVariable Long id) {
         return studentService.getEstudiante(id).orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
     }
 

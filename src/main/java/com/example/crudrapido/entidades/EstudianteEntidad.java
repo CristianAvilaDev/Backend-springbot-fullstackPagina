@@ -1,4 +1,4 @@
-package com.example.crudrapido.entiti;
+package com.example.crudrapido.entidades;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="tbl_student2")
-public class estudiante {
+public class EstudianteEntidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

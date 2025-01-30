@@ -14,7 +14,7 @@ Este repositorio contiene el backend de un sistema CRUD desarrollado con Spring 
   
 ## Frontend:
 - Repositorio del frontend: [Aquí](https://github.com/CristianAvilaDev/FullstackPagina-frontend-v1)
-- Aplicación en funcionamiento: https://merry-jalebi-ae8efb.netlify.app/
+- Aplicación en funcionamiento: [https://merry-jalebi-ae8efb.netlify.app/](https://inspiratendencias.netlify.app/)
 
 
 

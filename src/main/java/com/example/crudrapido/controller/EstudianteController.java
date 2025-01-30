@@ -25,6 +25,9 @@ public class EstudianteController {
 
     @GetMapping("/inicio")
     public String bienvenido(HttpServletRequest request) {
+
+        System.out.println("¡Hola desde Spring Boot!");
+        
         String urlAplicacion = request.getScheme() + "://" + request.getServerName()
                 + ":" + request.getServerPort();  // Siempre usa el puerto sin filtrar
 

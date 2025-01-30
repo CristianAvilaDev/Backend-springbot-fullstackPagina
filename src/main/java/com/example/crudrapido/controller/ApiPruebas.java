@@ -1,7 +1,6 @@
 package com.example.crudrapido.controller;
 
 import com.example.crudrapido.entiti.estudiante;
-import com.example.crudrapido.service.studentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ApiController {
+public class ApiPruebas {
 
 
     @Autowired
@@ -40,8 +39,8 @@ public class ApiController {
     // Nuevo endpoint para recibir un dato forma de texto
     @PostMapping(value = "/api/recibirDato", consumes = MediaType.TEXT_PLAIN_VALUE)
     public String recibirDato(@RequestBody String dato) {
-        System.out.println("test cambios, borrar esto");
-        System.out.println("test cambios, borrar esto");
+        System.out.println("test cwqwqwambios, borrar esto");
+        System.out.println("test cwqwqwambios, borrfqwqto");
         System.out.println("Dato recibido en el backend: " + dato);
         return "Dato recibido: " + dato;
     }

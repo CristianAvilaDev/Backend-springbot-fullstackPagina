@@ -11,9 +11,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         // Configuración global para habilitar CORS
         registry.addMapping("/**")  // Aplicarlo a todas las rutas
-                .allowedOrigins("http://localhost:4200", "https://merry-jalebi-ae8efb.netlify.app")  // Orígenes permitidos (tu aplicación Angular y el sitio adicional)
+                .allowedOrigins("*")  // Permitir cualquier origen
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  // Métodos permitidos
-                .allowedHeaders("*")  // Permitir todos los encabezados
-                .allowCredentials(true);  // Si se necesita permitir credenciales (cookies, autenticación)
+                .allowedHeaders("*");  // Permitir todos los encabezados
     }
 }

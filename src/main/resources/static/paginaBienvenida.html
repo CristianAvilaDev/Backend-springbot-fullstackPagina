@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida a la API</title>
+</head>
+<body>
+<h1>Bienvenido a la API de Estudiantes de CRUD Rápido</h1>
+<p>A continuación te explicamos cómo acceder a los endpoints:</p>
+
+<h2>1. Obtener todos los estudiantes (GET)</h2>
+<p><strong>Ruta:</strong> /api/v1/estudiante/</p>
+<p><strong>Descripción:</strong> Este endpoint te devuelve la lista de todos los estudiantes registrados.</p>
+<p><strong>En Postman:</strong></p>
+<ul>
+    <li><strong>Método:</strong> GET</li>
+    <li><strong>URL:</strong> <span th:text="${urlAplicacion}"></span>/api/v1/estudiante/</li>
+</ul>
+
+<h2>2. Obtener un estudiante por ID (GET)</h2>
+<p><strong>Ruta:</strong> /api/v1/estudiante/{id}</p>
+<p><strong>Descripción:</strong> Obtén los datos de un estudiante específico usando su ID.</p>
+<p><strong>En Postman:</strong></p>
+<ul>
+    <li><strong>Método:</strong> GET</li>
+    <li><strong>URL:</strong> <span th:text="${urlAplicacion}"></span>/api/v1/estudiante/{id}</li>
+    <li>Reemplaza <code>{id}</code> con el ID del estudiante que deseas consultar.</li>
+</ul>
+
+<h2>3. Guardar un nuevo estudiante (POST)</h2>
+<p><strong>Ruta:</strong> /api/v1/estudiante/</p>
+<p><strong>Descripción:</strong> Usa este endpoint para guardar un nuevo estudiante.</p>
+<p><strong>En Postman:</strong></p>
+<ul>
+    <li><strong>Método:</strong> POST</li>
+    <li><strong>URL:</strong> <span th:text="${urlAplicacion}"></span>/api/v1/estudiante/</li>
+    <li><strong>En el cuerpo (Body):</strong></li>
+    <pre>
+{
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "edad": 20,
+    "email": "juan.perez@mail.com"
+}
+        </pre>
+</ul>
+
+<h2>4. Eliminar un estudiante por ID (DELETE)</h2>
+<p><strong>Ruta:</strong> /api/v1/estudiante/{id}</p>
+<p><strong>Descripción:</strong> Elimina un estudiante mediante su ID.</p>
+<p><strong>En Postman:</strong></p>
+<ul>
+    <li><strong>Método:</strong> DELETE</li>
+    <li><strong>URL:</strong> <span th:text="${urlAplicacion}"></span>/api/v1/estudiante/{id}</li>
+    <li>Reemplaza <code>{id}</code> con el ID del estudiante que deseas eliminar.</li>
+</ul>
+
+<p>Cada uno de estos endpoints requiere que tengas configurado correctamente tu entorno local, con el servidor ejecutándose en <strong th:text="${urlAplicacion}"></strong>.</p>
+</body>
+</html>

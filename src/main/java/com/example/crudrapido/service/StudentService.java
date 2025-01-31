@@ -8,6 +8,8 @@ import com.example.crudrapido.entidades.EstudianteEntidad;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Sort;
+
 @Service
 public class StudentService {
 
@@ -24,7 +26,8 @@ public class StudentService {
          EstudianteRepositorio.save(nuevoEstudiante); // Guarda o actualiza un estudiante
     }
     public List<EstudianteEntidad> getEstudianteTodos() {
-        return  EstudianteRepositorio.findAll(); // Devuelve todos los estudiantes
+
+        return EstudianteRepositorio.findAll(Sort.by(Sort.Order.asc("studentId"))); //
     }
 
 
@@ -33,3 +36,5 @@ public class StudentService {
         EstudianteRepositorio.deleteById(id); // Elimina un estudiante por ID
     }
 }
+
+

@@ -10,6 +10,7 @@ public class EstudianteEntidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
     private long studentId;
     private String email;  // Ahora email es solo un campo de texto normal
     private String firstName;

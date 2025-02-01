@@ -1,6 +1,6 @@
-# Backend para Sistema CRUD con Spring Boot y PostgreSQL
+# Backend para Proyecto Fullstack con Spring Boot y PostgreSQL
 
-Este repositorio contiene el backend de un sistema CRUD desarrollado con Spring Boot y que se conecta a una base de datos PostgreSQL. El backend está diseñado como una API RESTful, lista para ser consumida por un frontend construido con Angular.
+Este repositorio contiene el backend de un proyecto fullstack desarrollado con Spring Boot, diseñado para proporcionar los endpoints necesarios para el frontend construido con Angular. La API RESTful permite realizar operaciones CRUD y se conecta a una base de datos PostgreSQL.
 
 ## Características principales:
 - API RESTful que permite operaciones CRUD (Crear, Leer, Actualizar, Eliminar).

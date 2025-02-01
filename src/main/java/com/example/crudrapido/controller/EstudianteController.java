@@ -20,7 +20,7 @@ public class EstudianteController {
 
     @GetMapping("/inicio")
     public String bienvenido(HttpServletRequest request) {
-
+        System.out.println("¡Hola desde Spring Boot!");
         System.out.println("¡Hola desde Spring Boot!");
         System.out.println("¡Hola desde Spring Boot!");
         System.out.println("¡Hola desde Spring Boot!");

@@ -23,6 +23,7 @@ public class EstudianteController {
 
         System.out.println("¡Hola desde Spring Boot!");
         System.out.println("¡Hola desde Spring Boot!");
+        System.out.println("¡Hola desde Spring Boot!");
 
         String urlAplicacion = request.getScheme() + "://" + request.getServerName()
                 + ":" + request.getServerPort();  // Siempre usa el puerto sin filtrar

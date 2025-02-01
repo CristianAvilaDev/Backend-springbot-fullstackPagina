@@ -8,8 +8,8 @@ Este repositorio contiene el backend de FullstackPagina, un proyecto fullstack q
 - Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) con los datos de la base de datos.
 - Base de datos PostgreSQL hospedada en supabase.com.
 - Diseñado para ser consumido por el frontend en Angular del proyecto FullstackPagina.
-- Contenedor Docker para facilidad de despliegue y ejecución.
-- Despliegue en Render.com
+- Dockerizado: El backend está empaquetado en un contenedor Docker, lo que facilita el despliegue y ejecución en cualquier entorno compatible con Docker.
+- Despliegue en Render.com, donde se ejecuta la imagen Docker en producción
 
 ## Acceso al Backend:
 - Backend en producción: [https://crudrapido-app-latest.onrender.com](https://crudrapido-app-latest.onrender.com)

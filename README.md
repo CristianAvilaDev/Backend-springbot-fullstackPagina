@@ -1,4 +1,5 @@
-#Backend para el Proyecto Fullstack con Spring Boot y PostgreSQL
+## **Backend para el Proyecto FullstackPagina con Spring Boot y PostgreSQL**
+
 Este repositorio contiene el backend de FullstackPagina, un proyecto fullstack que consta de un frontend desarrollado en Angular y un backend en Spring Boot. Este backend está diseñado para realizar operaciones CRUD y se conecta a una base de datos PostgreSQL. Los endpoints proporcionados están específicamente diseñados para ser consumidos por el frontend Angular, ofreciendo la funcionalidad necesaria para la aplicación. 
 
 ## Características principales:

@@ -6,6 +6,7 @@ Este repositorio contiene el backend de un proyecto fullstack desarrollado con S
 - API RESTful que permite operaciones CRUD (Crear, Leer, Actualizar, Eliminar).
 - Desarrollado utilizando Spring Boot.
 - Base de datos PostgreSQL hospedada en supabase.com.
+- Diseñado para ser consumido por el frontend en Angular del proyecto FullstackPagina.
 - Contenedor Docker para facilidad de despliegue y ejecución.
 - Despliegue en Render.com
 

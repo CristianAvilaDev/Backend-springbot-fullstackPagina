@@ -1,0 +1,276 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex b849d16..0000000[m
+[1m--- a/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-# Backend para Sistema CRUD con Spring Boot y PostgreSQL[m
+[31m-[m
+[31m-Este repositorio contiene el backend de un sistema CRUD desarrollado con Spring Boot y que se conecta a una base de datos PostgreSQL. El backend está diseñado como una API RESTful, lista para ser consumida por un frontend construido con Angular.[m
+[31m-[m
+[31m-## Características principales:[m
+[31m-- API RESTful que permite operaciones CRUD (Crear, Leer, Actualizar, Eliminar).[m
+[31m-- Desarrollado utilizando Spring Boot.[m
+[31m-- Base de datos PostgreSQL hospedada en supabase.com.[m
+[31m-- Contenedor Docker para facilidad de despliegue y ejecución.[m
+[31m-- Despliegue en Render.com[m
+[31m-[m
+[31m-## Acceso al Backend:[m
+[31m-- Backend en producción: [https://crudrapido-app-latest.onrender.com](https://crudrapido-app-latest.onrender.com)[m
+[31m-  [m
+[31m-## Frontend:[m
+[31m-- Repositorio del frontend: [Aquí](https://github.com/CristianAvilaDev/FullstackPagina-frontend-v1)[m
+[31m-- Aplicación en funcionamiento: https://inspiratendencias.netlify.app/[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-## Requisitos[m
+[31m-[m
+[31m-Antes de ejecutar el proyecto localmente, asegúrate de tener instalados los siguientes programas:[m
+[31m-[m
+[31m-- **Java 17 o superior** (para ejecutar el backend Spring Boot).[m
+[31m-- **Docker** (si deseas correr la aplicación en un contenedor).[m
+[31m-[m
+[31m-## Instalación y despliegue local[m
+[31m-[m
+[31m-### Clonar el repositorio[m
+[31m-[m
+[31m-```bash[m
+[31m-git clone https://github.com/CristianAvilaDev/FullstackPagina-backend-v1[m
+[31m-[m
+[31m-```[m
+[31m-[m
+[31m-### Ejecutar el backend:[m
+[31m-[m
+[31m-Si deseas ejecutar el proyecto de manera local:[m
+[31m-[m
+[31m-#### usando el jar en  windows:[m
+[31m-```bash[m
+[31m-./mvnw spring-boot:run[m
+[31m-[m
+[31m-```[m
+[31m-[m
+[31m-[m
+[31m-Notas: [m
+[31m-[m
+[31m-Si deseas usar una base de datos diferente, configura las propiedades de la base de datos en el archivo application.properties según corresponda.[m
+[1mdiff --git a/src/main/java/com/example/crudrapido/controller/EstudianteController.java b/src/main/java/com/example/crudrapido/controller/EstudianteController.java[m
+[1mindex 1e2b0dc..a8dcb3a 100644[m
+[1m--- a/src/main/java/com/example/crudrapido/controller/EstudianteController.java[m
+[1m+++ b/src/main/java/com/example/crudrapido/controller/EstudianteController.java[m
+[36m@@ -1,16 +1,11 @@[m
+ package com.example.crudrapido.controller;[m
+ [m
+[31m-[m
+[31m-[m
+ import jakarta.servlet.http.HttpServletRequest;[m
+ import org.springframework.beans.factory.annotation.Autowired;[m
+ import org.springframework.web.bind.annotation.*;[m
+ import com.example.crudrapido.entidades.EstudianteEntidad;[m
+ import com.example.crudrapido.service.StudentService;[m
+ [m
+[31m-[m
+[31m-[m
+[31m-[m
+ import java.util.List;[m
+ [m
+ @RestController[m
+[36m@@ -25,42 +20,87 @@[m [mpublic class EstudianteController {[m
+ [m
+     @GetMapping("/inicio")[m
+     public String bienvenido(HttpServletRequest request) {[m
+[32m+[m
+[32m+[m[32m        System.out.println("¡Hola desde Spring Boot!");[m
+[32m+[m[32m        System.out.println("¡Hola desde Spring Boot!");[m
+[32m+[m[32m        System.out.println("¡Hola desde Spring Boot!");[m
+[32m+[m
+         String urlAplicacion = request.getScheme() + "://" + request.getServerName()[m
+                 + ":" + request.getServerPort();  // Siempre usa el puerto sin filtrar[m
+ [m
+         // Usamos la constante BASE_PATH para construir las rutas[m
+[31m-        return "Bienvenido a la API de Estudiantes de CRUD Rápido.<br><br>"[m
+[31m-                + "A continuación te explicamos cómo acceder a los endpoints:<br><br>"[m
+[32m+[m[32m        return "<h2>Bienvenido al backend </h2>"[m
+[32m+[m[32m                + "<p>Explora los siguientes endpoints para interactuar con la API:</p>"[m
+ [m
+[32m+[m[32m                + " <br><br> <br><hr>"[m
+                 + "<strong>1. Obtener todos los estudiantes (GET):</strong><br>"[m
+[31m-                + "   Ruta: " + BASE_PATH + "/obtenerEstudiantes<br>"[m
+[32m+[m[32m                + "   Ruta: <code>" + BASE_PATH + "/obtenerEstudiantes</code><br>"[m
+                 + "   Descripción: Este endpoint te devuelve la lista de todos los estudiantes registrados.<br>"[m
+                 + "   En Postman:<br>"[m
+                 + "     Método: GET<br>"[m
+                 + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/obtenerEstudiantes\" target=\"_blank\">"[m
+[31m-                + urlAplicacion + BASE_PATH + "/obtenerEstudiantes</a><br><br>"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/obtenerEstudiantes</a><br>"[m
+[32m+[m[32m                + " <br> <hr>"[m
+ [m
+                 + "<strong>2. Guardar un nuevo estudiante (POST):</strong><br>"[m
+[31m-                + "   Ruta: " + BASE_PATH + "/guardarEstudiante<br>"[m
+[32m+[m[32m                + "   Ruta: <code>" + BASE_PATH + "/guardarEstudiante</code><br>"[m
+                 + "   Descripción: Usa este endpoint para guardar un nuevo estudiante.<br>"[m
+                 + "   En Postman:<br>"[m
+                 + "     Método: POST<br>"[m
+                 + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/guardarEstudiante\" target=\"_blank\">"[m
+                 + urlAplicacion + BASE_PATH + "/guardarEstudiante</a><br>"[m
+                 + "     En el cuerpo (Body) de la solicitud, usa JSON con los datos del estudiante:<br>"[m
+[31m-                + "     {\"email\": \"maria.gomez@example.com\", \"firstName\": \"María\", \"lastName\": \"Gómez\"}<br><br>"[m
+[31m-[m
+[32m+[m[32m                + "<pre>{<br>"[m
+[32m+[m[32m                + "  \"email\": \"juan.perez@example.com\",<br>"[m
+[32m+[m[32m                + "  \"firstName\": \"Juan\",<br>"[m
+[32m+[m[32m                + "  \"lastName\": \"Pérez\"<br>"[m
+[32m+[m[32m                + "}</pre><br>"[m
+[32m+[m[32m                + " <br> <hr>"[m
+ [m
+                 + "<strong>3. Obtener un estudiante por ID (GET):</strong><br>"[m
+[31m-                + "   Ruta: " + BASE_PATH + "/obtenerEstudiante/{id}<br>"[m
+[32m+[m[32m                + "   Ruta: <code>" + BASE_PATH + "/obtenerEstudiante/id</code><br>"[m
+                 + "   Descripción: Obtén los datos de un estudiante específico usando su ID.<br>"[m
+                 + "   En Postman:<br>"[m
+                 + "     Método: GET<br>"[m
+[31m-                + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/obtenerEstudiante/{id}\" target=\"_blank\">"[m
+[32m+[m[32m                + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/obtenerEstudiante/id\" target=\"_blank\">"[m
+                 + urlAplicacion + BASE_PATH + "/obtenerEstudiante/{id}</a><br>"[m
+[31m-                + "     Reemplaza {id} con el ID del estudiante que deseas consultar.<br><br>"[m
+[31m-[m
+[31m-                + "Servidor ejecutándose en <a href=\"" + urlAplicacion + "\" target=\"_blank\">" + urlAplicacion + "</a>.";[m
+[32m+[m[32m                + "     Reemplaza <code>id</code> con el ID del estudiante que deseas consultar.<br>"[m
+[32m+[m[32m                + "     Ejemplo: <a href=\"" + urlAplicacion + BASE_PATH + "/obtenerEstudiante/443\" target=\"_blank\">"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/obtenerEstudiante/443</a><br>"[m
+[32m+[m[32m                + " <br> <hr>"[m
+[32m+[m
+[32m+[m[32m                + "<strong>4. Eliminar un estudiante (DELETE):</strong><br>"[m
+[32m+[m[32m                + "   Ruta: <code>" + BASE_PATH + "/id</code><br>"[m
+[32m+[m[32m                + "   Descripción: Elimina un estudiante utilizando su ID.<br>"[m
+[32m+[m[32m                + "   En Postman:<br>"[m
+[32m+[m[32m                + "     Método: DELETE<br>"[m
+[32m+[m[32m                + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/id\" target=\"_blank\">"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/id</a><br>"[m
+[32m+[m[32m                + "     Reemplaza <code>id</code> con el ID del estudiante que deseas eliminar.<br>"[m
+[32m+[m[32m                + "     Ejemplo: <a href=\"" + urlAplicacion + BASE_PATH + "/443\" target=\"_blank\">"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/443</a><br>"[m
+[32m+[m
+[32m+[m[32m                + " <br> <hr>"[m
+[32m+[m
+[32m+[m[32m                + "<strong>5. Actualizar un estudiante (PUT):</strong><br>"[m
+[32m+[m[32m                + "   Ruta: <code>" + BASE_PATH + "/actualizarEstudiante/id</code><br>"[m
+[32m+[m[32m                + "   Descripción: Actualiza la información de un estudiante usando su ID.<br>"[m
+[32m+[m[32m                + "   En Postman:<br>"[m
+[32m+[m[32m                + "     Método: PUT<br>"[m
+[32m+[m[32m                + "     URL: <a href=\"" + urlAplicacion + BASE_PATH + "/actualizarEstudiante/id\" target=\"_blank\">"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/actualizarEstudiante/{id}</a><br>"[m
+[32m+[m[32m                + "     Reemplaza <code>id</code> con el ID del estudiante que deseas actualizar.<br>"[m
+[32m+[m[32m                + "     Ejemplo: <a href=\"" + urlAplicacion + BASE_PATH + "/actualizarEstudiante/443\" target=\"_blank\">"[m
+[32m+[m[32m                + urlAplicacion + BASE_PATH + "/actualizarEstudiante/443</a><br>"[m
+[32m+[m[32m                + "     En el cuerpo (Body) de la solicitud, usa JSON con los nuevos datos del estudiante:<br>"[m
+[32m+[m[32m                + "<pre>{<br>"[m
+[32m+[m[32m                + "  \"email\": \"juan.perez@example.com\",<br>"[m
+[32m+[m[32m                + "  \"firstName\": \"Juan\",<br>"[m
+[32m+[m[32m                + "  \"lastName\": \"Pérez\"<br>"[m
+[32m+[m[32m                + "}</pre><br>"[m
+[32m+[m[32m                + " <br> <hr>"[m
+[32m+[m
+[32m+[m[32m                + "<p>Servidor ejecutándose en <a href=\"" + urlAplicacion + "\" target=\"_blank\">" + urlAplicacion + "</a>.</p>";[m
+     }[m
+ [m
+     // POST: guardar un estudiante[m
+[36m@@ -87,5 +127,22 @@[m [mpublic class EstudianteController {[m
+     public void deleteEstudiante(@PathVariable Long id) {[m
+         studentService.deleteEstudiante(id); // Elimina el estudiante[m
+     }[m
+[31m-}[m
+ [m
+[32m+[m[32m    // PUT: actualizar un estudiante[m
+[32m+[m[32m    @PutMapping("/actualizarEstudiante/{id}")[m
+[32m+[m[32m    public EstudianteEntidad actualizarEstudiante(@PathVariable Long id, @RequestBody EstudianteEntidad estudianteActualizado) {[m
+[32m+[m[32m        // Verificamos si el estudiante existe[m
+[32m+[m[32m        EstudianteEntidad estudianteExistente = studentService.getEstudiante(id)[m
+[32m+[m[32m                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));[m
+[32m+[m
+[32m+[m[32m        // Actualizamos los campos del estudiante existente con los datos proporcionados[m
+[32m+[m[32m        estudianteExistente.setEmail(estudianteActualizado.getEmail());[m
+[32m+[m[32m        estudianteExistente.setFirstName(estudianteActualizado.getFirstName());[m
+[32m+[m[32m        estudianteExistente.setLastName(estudianteActualizado.getLastName());[m
+[32m+[m
+[32m+[m[32m        // Guardamos el estudiante actualizado[m
+[32m+[m[32m        studentService.saveEstudiante(estudianteExistente);[m
+[32m+[m
+[32m+[m[32m        return estudianteExistente; // Retornamos el estudiante actualizado[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/crudrapido/controller/HomeController.java b/src/main/java/com/example/crudrapido/controller/HomeController.java[m
+[1mindex 02f9cfd..29ee7ec 100644[m
+[1m--- a/src/main/java/com/example/crudrapido/controller/HomeController.java[m
+[1m+++ b/src/main/java/com/example/crudrapido/controller/HomeController.java[m
+[36m@@ -4,20 +4,18 @@[m [mimport jakarta.servlet.http.HttpServletRequest;[m
+ import org.springframework.web.bind.annotation.GetMapping;[m
+ import org.springframework.web.bind.annotation.RequestMapping;[m
+ import org.springframework.web.bind.annotation.RestController;[m
+[32m+[m[32mimport org.springframework.web.servlet.view.RedirectView;[m
+ [m
+ @RestController[m
+ @RequestMapping("/")[m
+ public class HomeController {[m
+ [m
+     @GetMapping[m
+[31m-    public String home(HttpServletRequest request) {[m
+[32m+[m[32m    public RedirectView home(HttpServletRequest request) {[m
+         String baseUrl = request.getScheme() + "://" + request.getServerName()[m
+                 + ":" + request.getServerPort();  // Siempre usa el puerto sin filtrar[m
+ [m
+[31m-        // Usamos BASE_PATH desde EstudianteController[m
+[31m-        return "Bienvenido a la API de Estudiantes de CRUD Rápido.<br><br>"[m
+[31m-                + "Para ver la documentación, accede a: "[m
+[31m-                + "<a href=\"" + baseUrl + EstudianteController.BASE_PATH + "/inicio\">"[m
+[31m-                + baseUrl + EstudianteController.BASE_PATH + "/inicio</a>";[m
+[32m+[m[32m        // Redirigir directamente a la URL deseada[m
+[32m+[m[32m        return new RedirectView(baseUrl + EstudianteController.BASE_PATH + "/inicio");[m
+     }[m
+ }[m
+[1mdiff --git a/src/main/java/com/example/crudrapido/entidades/EstudianteEntidad.java b/src/main/java/com/example/crudrapido/entidades/EstudianteEntidad.java[m
+[1mindex f612e70..395ccef 100644[m
+[1m--- a/src/main/java/com/example/crudrapido/entidades/EstudianteEntidad.java[m
+[1m+++ b/src/main/java/com/example/crudrapido/entidades/EstudianteEntidad.java[m
+[36m@@ -10,6 +10,7 @@[m [mpublic class EstudianteEntidad {[m
+ [m
+     @Id[m
+     @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    @Column(name = "student_id")[m
+     private long studentId;[m
+     private String email;  // Ahora email es solo un campo de texto normal[m
+     private String firstName;[m
+[1mdiff --git a/src/main/java/com/example/crudrapido/service/StudentService.java b/src/main/java/com/example/crudrapido/service/StudentService.java[m
+[1mindex d479ab8..37b8a46 100644[m
+[1m--- a/src/main/java/com/example/crudrapido/service/StudentService.java[m
+[1m+++ b/src/main/java/com/example/crudrapido/service/StudentService.java[m
+[36m@@ -8,6 +8,8 @@[m [mimport com.example.crudrapido.entidades.EstudianteEntidad;[m
+ import java.util.List;[m
+ import java.util.Optional;[m
+ [m
+[32m+[m[32mimport org.springframework.data.domain.Sort;[m
+[32m+[m
+ @Service[m
+ public class StudentService {[m
+ [m
+[36m@@ -24,7 +26,8 @@[m [mpublic class StudentService {[m
+          EstudianteRepositorio.save(nuevoEstudiante); // Guarda o actualiza un estudiante[m
+     }[m
+     public List<EstudianteEntidad> getEstudianteTodos() {[m
+[31m-        return  EstudianteRepositorio.findAll(); // Devuelve todos los estudiantes[m
+[32m+[m
+[32m+[m[32m        return EstudianteRepositorio.findAll(Sort.by(Sort.Order.asc("studentId"))); //[m
+     }[m
+ [m
+ [m
+[36m@@ -33,3 +36,5 @@[m [mpublic class StudentService {[m
+         EstudianteRepositorio.deleteById(id); // Elimina un estudiante por ID[m
+     }[m
+ }[m
+[41m+[m
+[41m+[m

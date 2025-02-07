@@ -29,8 +29,8 @@ Este repositorio contiene el backend de FullstackPagina, un proyecto fullstack q
 
 Antes de ejecutar el proyecto localmente, asegúrate de tener instalados los siguientes programas:
 
-- **Java 17 o superior** (para ejecutar el backend Spring Boot).
-- **Docker** (si deseas correr la aplicación en un contenedor).
+- **Java 17 o superior** (recomendado Java 23) .
+
 
 ## Instalación y despliegue local
 
@@ -43,13 +43,7 @@ git clone https://github.com/CristianAvilaDev/FullstackPagina-backend-v1
 
 ### Ejecutar el backend:
 
-Si deseas ejecutar el proyecto de manera local:
-
-#### usando el jar en  windows:
-```bash
-./mvnw spring-boot:run
-
-```
+ accede a:  [http://localhost:8080](http://localhost:8080/)
 
 
 Notas: 

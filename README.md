@@ -29,7 +29,7 @@ Este repositorio contiene el backend de FullstackPagina, un proyecto fullstack q
 
 Antes de ejecutar el proyecto localmente, asegúrate de tener instalados los siguientes programas:
 
-- **Java 17 o superior** (recomendado Java 23) .
+- **Java 23 o superior** 
 
 
 ## Instalación y despliegue local
